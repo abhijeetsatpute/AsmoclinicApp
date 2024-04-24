@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
+const fileUpload = require('express-fileupload')
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
