@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<!DOCTYPE html>
+<html lang="uz">
+<%- include('partials/head'); %>
+<%- include('partials/navbar'); %>
+<%- array %>
+<main>
+
+	<main class="container">
+
+		 
+
+		<div class="wrapper d-flex flex-wrap justify-content-around">
+
+			<div class="d-flex flex-wrap justify-content-around">
+				<a href="/teamPage" class="text-reset text-decoration-none text-secondary"
+					style="color: #9AB5BE !important;max-width: 500px; width: 100%;">
+					<div class="member rounded-3   bg-white m-3 p-3">
+						<img src="assets/images/avatar/team-1.jpg">
+
+						<div class="member__right">
+							<h4 style="text-align: right; display: block; margin-right: 25px;" class="text-reset ">
+								Bahrom Ilamanovich
+							</h4>
+							<div style="text-align: right; display: block; margin-right: 25px">Tibbiyot fanlari nomzodi,
+								dotsent, oliy toifali vrach
+								dermatovenerolog</div>
+						</div>
+					</div>
+				</a>
+			</div>
+
+
+		</div>
+
+	</main>
+	<script>
+		let wrapper = document.querySelectorAll(".wrapper")
+		let doctors = [{
+				id: 1,
+				name: 'Salmons Creek',
+				image: 'https://farm6.staticflickr.com/5479/11694969344_42dff96680.jpg',
+				description: "Great place to go fishin' Bacon ipsum dolor amet kielbasa cow"
+			},
+			{
+				id: 2,
+				name: 'Granite Hills',
+				image: 'https://farm5.staticflickr.com/4103/5088123249_5f24c3202c.jpg',
+				description: "It's just a hill.  Made of granite.  Nothing more! Cow doner."
+			},
+			{
+				id: 3,
+				name: 'Wildwood Miew',
+				image: 'https://farm5.staticflickr.com/4016/4369518024_0f64300987.jpg',
+				description: 'All campsites.  All the time.Short ribs pastrami drumstick.'
+			},
+			{
+				id: 4,
+				name: 'Lake Fooey',
+				image: 'https://farm7.staticflickr.com/6138/6042439726_9efecf8348.jpg',
+				description: 'Hills and lakes and lakes and hills.  Pork ribeye pork chop.'
+			}
+		];
+
+		function renderDoctors(array, wrapper) {
+			wrapper.innerHTML = null;
+			let totalDoctors = 0;
+			let tempFragment = document.createDocumentFragment();
+			for (const item of array) {
+
+				let newMainDiv = document.createElement("div");
+				newLi.classList.add("d-flex flex-wrap justify-content-around");
+				let newImg = document.createElement("img");
+				newImg.src = item.img;
+				newImg.setAttribute("alt", "pokemon")
+				newImg.setAttribute("class", "img")
+
+				let newH3 = document.createElement("h3");
+				newH3.textContent = item.name;
+
+				let newH5 = document.createElement("h5")
+				newH5.innerHTML = `Type: ${item.type} <br>
+        Height: ${item.height} m <br> Weight: ${item.weight} kg`;
+
+
+				let newLike = document.createElement("img")
+				newLike.id = "like";
+				if (likedDoctors.includes(item)) {
+					newLike.id = "liked"
+				}  
+
+				newLi.appendChild(newImg)
+				newLi.appendChild(newH3)
+				newLi.appendChild(newH5)
+				newLi.appendChild(newLike)
+				tempFragment.appendChild(newLi)
+				totalDoctors++;
+			}
+
+			elTotal.textContent = totalDoctors;
+			if (totalDoctors != 0) {
+				wrapper.appendChild(tempFragment)
+
+			} else {
+				wrapper.innerHTML = "<h1>0 Doctors found</h1>"
+			}
+
+
+		}
+	</script>
+
+
+	<%- include('partials/footer')%>
+
+	<script src="./assets/js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+
+
+	</body>
+
+</html>
