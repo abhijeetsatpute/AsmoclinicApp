@@ -8,8 +8,8 @@ const router = express.Router();
  
 router.get('/', (req, res, next) => {
   
-  res.render('login', {
-    path: '/login'
+  res.render('admin', {
+    path: '/admin'
   });
 });
 

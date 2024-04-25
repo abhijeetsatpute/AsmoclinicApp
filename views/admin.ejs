@@ -4,7 +4,7 @@
 
 <%- include('partials/head'); %>
 
-<body>
+<body class=" ">
     <div class="loader__wrapper">
 
         <div class="lds-ring">
@@ -17,50 +17,102 @@
     </div>
 
 
-    <%- include('partials/navbar'); %>
 
-    <main class="container">
-        <nav class="navbar sticky-lg-top navbar-expand-lg bg-white"
-        style="border-bottom-left-radius:40px ;border-bottom-right-radius: 40px;">
-        <div class="container d-flex justify-content-between">
-            <a href="/"><img class="navbar-brand" src="assets/images/logo.png" width="200" height="auto"
-                    style="max-width: 200px; width: 100vw;" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul class="navbar-nav text-center d-flex ms-auto align-items-center">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/">Asosiy</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/team">Jamoa</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/gallery">Galereya</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blogs">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/results">Natijalar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">Biz haqimizda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/"><img src="/assets/images/lang.png" width="80" height=""
-                                alt="tilni tanlash"></a>
-                    </li>
-                </ul>
-            </div>
+
+    <main class="d-flex">
+        <form style="height: 100%;"
+            class="  form container  d-flex justify-content-center align-items-center flex-column gap-2">
+            <label class="d-flex flex-column text-center gap-1">
+                <span class="text-primary">Login</span>
+                <input type="text" placeholder="Login" class="form-control login">
+            </label>
+            <label class="d-flex flex-column text-center gap-1">
+                <span class="text-primary">Password</span>
+                <input type="text" placeholder="password" class="form-control password">
+            </label>
+            <label class=" text-center gap-1 w-50 m-3">
+
+                <button class="btn text-center btn-outline-primary" type="submit">Submit</button>
+            </label>
+            <span class="status"></span>
+
+        </form>
+
+
+        <div class="main visually-hidden p-3 bg-white d-flex flex-column"
+            style="max-width:400px;height: 100%; border-right: black solid 1px;">
+            <a href="/"><img class="navbar-brand" src="/assets/images/logo.png" width="200" height="auto"
+                    style="max-width: 200px; width: 100vw;" alt="logo"></a><a href="/"
+                class="d-flex align-items-center pb-3 mb-3  text-decoration-none border-bottom">
+
+
+            </a>
+            <ul class="list-unstyled ps-0 d-flex flex-column justify-content-between fs-3">
+                <li class="mb-5">
+
+                    Doctors
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="nav-link rounded">View All</a></li>
+                        <li><a href="#" class="nav-link rounded">Add</a></li>
+                        <li><a href="#" class="nav-link rounded">Delete</a></li>
+                        <li><a href="#" class="nav-link rounded">Update</a></li>
+                    </ul>
+                </li>
+                <li class="mb-5">
+
+                    Blogs
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="nav-link rounded">View All</a></li>
+                        <li><a href="#" class="nav-link rounded">Create</a></li>
+                        <li><a href="#" class="nav-link rounded">Delete</a></li>
+                        <li><a href="#" class="nav-link rounded">Update</a></li>
+                    </ul>
+                </li>
+                <li class="mb-5">
+                    Results
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="nav-link rounded">View</a></li>
+                        <li><a href="#" class="nav-link rounded">Add</a></li>
+                        <li><a href="#" class="nav-link rounded">Delete</a></li>
+                    </ul>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-5">
+                    <button class="btn btn-toggle align-items-center rounded " onclick="window.location.reload()">
+                        Sign out
+                    </button>
+
+                </li>
+            </ul>
         </div>
-    </nav>
+        <div class="main2  visually-hidden bg-white p-5  d-block w-100">awdawd</div>
+
     </main>
+    <script>
+        let login = document.querySelector(".login")
+        let password = document.querySelector(".password")
+        let form = document.querySelector(".form")
+        let main = document.querySelector(".main")
+        let main2 = document.querySelector(".main2")
+
+        form.addEventListener("submit", function (evt) {
+            evt.preventDefault();
+            if (login.value && password.value) {
+
+                if (login.value == "1" && password.value == "2") {
+                    form.classList.add("visually-hidden");
+                    main.classList.remove("visually-hidden");
+                    main2.classList.remove("visually-hidden");
+
+                } else {
+                    document.querySelector(".status").textContent = "ERROR"
+                }
 
 
-    <%- include('partials/footer')%>
+            }
 
-</body>
+
+        })
+    </script>
 
 </html>
