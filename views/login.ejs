@@ -18,7 +18,7 @@
 
 
 
-    <main>
+    <main class="main">
         <form style="height: 100%;"
             class=" visually-hidden form container  d-flex justify-content-center align-items-center flex-column gap-2">
             <label class="d-flex flex-column text-center gap-1">
@@ -38,71 +38,51 @@
         </form>
 
 
-
-        <div class="flex-shrink-0 p-3 bg-white" style="max-width:400px;">
-            <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+        <div class="flex-shrink-0 p-3 bg-white d-flex flex-column" style="max-width:400px;height: 100%;">
+            <a href="/" class="d-flex align-items-center pb-3 mb-3  text-decoration-none border-bottom">
 
                 <a href="/"><img class="navbar-brand" src="assets/images/logo.png" width="200" height="auto"
                         style="max-width: 200px; width: 100vw;" alt="logo"></a>
             </a>
-            <ul class="list-unstyled ps-0">
+            <ul class="list-unstyled ps-0 d-flex flex-column justify-content-between fs-3">
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#home-collapse" aria-expanded="true">
-                        Doctors
-                    </button>
-                    <div class="collapse show" id="home-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Add</a></li>
-                            <li><a href="#" class="link-dark rounded">Delete</a></li>
-                            <li><a href="#" class="link-dark rounded">Update</a></li>
-                        </ul>
-                    </div>
+
+                    Doctors
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="link rounded">Add</a></li>
+                        <li><a href="#" class=" rounded">Delete</a></li>
+                        <li><a href="#" class=" rounded">Update</a></li>
+                    </ul>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        Dashboard
-                    </button>
-                    <div class="collapse" id="dashboard-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">Overview</a></li>
-                            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                            <li><a href="#" class="link-dark rounded">Annually</a></li>
-                        </ul>
-                    </div>
+
+                    Blogs
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class=" rounded">Overview</a></li>
+                        <li><a href="#" class=" rounded">Weekly</a></li>
+                        <li><a href="#" class=" rounded">Monthly</a></li>
+                        <li><a href="#" class=" rounded">Annually</a></li>
+                    </ul>
                 </li>
                 <li class="mb-1">
-                    <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#orders-collapse" aria-expanded="false">
-                        Orders
-                    </button>
-                    <div class="collapse" id="orders-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">New</a></li>
-                            <li><a href="#" class="link-dark rounded">Processed</a></li>
-                            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                            <li><a href="#" class="link-dark rounded">Returned</a></li>
-                        </ul>
-                    </div>
+                    Results
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class=" rounded">New</a></li>
+                        <li><a href="#" class=" rounded">Processed</a></li>
+                        <li><a href="#" class=" rounded">Shipped</a></li>
+                        <li><a href="#" class=" rounded">Returned</a></li>
+                    </ul>
                 </li>
                 <li class="border-top my-3"></li>
                 <li class="mb-1">
                     <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                         data-bs-target="#account-collapse" aria-expanded="false">
-                        Account
+                        Sign out
                     </button>
-                    <div class="collapse" id="account-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                            <li><a href="#" class="link-dark rounded">New...</a></li>
-                            <li><a href="#" class="link-dark rounded">Profile</a></li>
-                            <li><a href="#" class="link-dark rounded">Settings</a></li>
-                            <li><a href="#" class="link-dark rounded">Sign out</a></li>
-                        </ul>
-                    </div>
+
                 </li>
             </ul>
+        </div>
         </div>
 
     </main>
@@ -115,26 +95,27 @@
         let login = document.querySelector(".login")
         let password = document.querySelector(".password")
         let form = document.querySelector(".form")
-        let status =
+        let main = document.querySelector(".main")
 
-            form.addEventListener("submit", function (evt) {
-                evt.preventDefault();
-                if (login.value && password.value) {
+        form.addEventListener("submit", function (evt) {
+            evt.preventDefault();
+            if (login.value && password.value) {
 
-                    if (login.value == "1" && password.value == "2") {
-                        form.classList.add("visually-hidden");
+                if (login.value == "1" && password.value == "2") {
+                    form.classList.add("visually-hidden");
+                    main.classList.remove("visually-hidden");
 
-                    } else {
-                        alert("error");
-                        console.log(status);
-                        document.querySelector(".status").textContent = "ERROR"
-                    }
-
-
+                } else {
+                    alert("error");
+                    console.log(status);
+                    document.querySelector(".status").textContent = "ERROR"
                 }
 
 
-            })
+            }
+
+
+        })
     </script>
 
 
