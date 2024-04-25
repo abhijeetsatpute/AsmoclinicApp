@@ -12,16 +12,5 @@ router.get('/', (req, res, next) => {
     path: '/blogs'
   });
 });
-
-// router.post('/upload', (req, res, next) => {
-//   const image = req.files.image
-//   console.log('image---',image)
-//   const extension = image.name.split('.')[-1]
-//   image.mv(__dirname + "/public/assets/images/blogs" + extension )
-//   res.send('uploaded')
-// });
-
-
-
-
+  
 module.exports = router;
