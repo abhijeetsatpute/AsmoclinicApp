@@ -1,27 +1,19 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html  >
 
 
 <%- include('partials/head'); %>
 
 <body class=" ">
-    <div class="loader__wrapper">
-
-        <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-    </div>
 
 
 
 
-    <main class="d-flex">
+
+    <main class="d-flex ">
+        <!-- login page -->
         <form style="height: 100%;"
-            class="  form container  d-flex justify-content-center align-items-center flex-column gap-2">
+            class=" form container  d-flex justify-content-center align-items-center flex-column gap-2">
             <label class="d-flex flex-column text-center gap-1">
                 <span class="text-primary">Login</span>
                 <input type="text" placeholder="Login" class="form-control login">
@@ -38,16 +30,16 @@
 
         </form>
 
-
-        <div class="main visually-hidden p-3 bg-white d-flex flex-column"
-            style="max-width:400px;height: 100%; border-right: black solid 1px;">
+        <!-- sidebar -->
+        <div class=" visually-hidden  sidebar p-3 bg-white d-flex flex-column"
+            style="width :20%;height: 100vh; border-right: black solid 1px;">
             <a href="/"><img class="navbar-brand" src="/assets/images/logo.png" width="200" height="auto"
                     style="max-width: 200px; width: 100vw;" alt="logo"></a><a href="/"
                 class="d-flex align-items-center pb-3 mb-3  text-decoration-none border-bottom">
 
 
             </a>
-            <ul class="list-unstyled ps-0 d-flex flex-column justify-content-between fs-3">
+            <ul class="list-unstyled p-3 d-flex flex-column justify-content-between fs-3">
                 <li class="mb-5">
 
                     Doctors
@@ -85,15 +77,51 @@
                 </li>
             </ul>
         </div>
-        <div class="main2  visually-hidden bg-white p-5  d-block w-100">awdawd</div>
+
+        <!-- main page -->
+        <div class="main visually-hidden  p-3 bg-white d-flex flex-column"
+            style=" width:80%;height: 100vh; border-right: black solid 1px;">
+
+            <ul class="list-unstyled ps-0 d-flex flex-column justify-content-between fs-3">
+                <li class="mb-5 h-1">
+
+                    Doctors
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="nav-link rounded">View All</a></li>
+                        <li><a href="#" class="nav-link rounded">Add</a></li>
+                        <li><a href="#" class="nav-link rounded">Delete</a></li>
+                        <li><a href="#" class="nav-link rounded">Update</a></li>
+                    </ul>
+                </li>
+                <li class="mb-5">
+
+                    Blogs
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="nav-link rounded">View All</a></li>
+                        <li><a href="#" class="nav-link rounded">Create</a></li>
+                        <li><a href="#" class="nav-link rounded">Delete</a></li>
+                        <li><a href="#" class="nav-link rounded">Update</a></li>
+                    </ul>
+                </li>
+                <li class="mb-5">
+                    Results
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="#" class="nav-link rounded">View</a></li>
+                        <li><a href="#" class="nav-link rounded">Add</a></li>
+                        <li><a href="#" class="nav-link rounded">Delete</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
 
     </main>
     <script>
         let login = document.querySelector(".login")
         let password = document.querySelector(".password")
         let form = document.querySelector(".form")
+        let sidebar = document.querySelector(".sidebar")
         let main = document.querySelector(".main")
-        let main2 = document.querySelector(".main2")
 
         form.addEventListener("submit", function (evt) {
             evt.preventDefault();
@@ -101,8 +129,8 @@
 
                 if (login.value == "1" && password.value == "2") {
                     form.classList.add("visually-hidden");
+                    sidebar.classList.remove("visually-hidden");
                     main.classList.remove("visually-hidden");
-                    main2.classList.remove("visually-hidden");
 
                 } else {
                     document.querySelector(".status").textContent = "ERROR"
@@ -114,5 +142,7 @@
 
         })
     </script>
+
+
 
 </html>

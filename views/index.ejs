@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html>
 <%- include('partials/head'); %>
 <%- include('partials/navbar'); %>
 <main>
@@ -41,7 +41,7 @@
 				text-center justify-content-center">
 
 			<div class="card rounded-4" style="width: 280px;height: 320px;">
-				<div class="card-body d-flex flex-column justify-content-between align-items-center  p-4">
+				<div class="card-body d-flex flex-column align-items-center p-3">
 					<img src="assets/images/consult.svg" alt="zoom" height="95" width="80">
 					<h4 class="py-4">Konsultatsiya</h4>
 					<p class="card-text">Yuqori malakali shifokorlardan konsultatsiya olish</p>
@@ -49,7 +49,7 @@
 			</div>
 
 			<div class="card rounded-4" style="width: 280px;height: 320px;">
-				<div class="card-body d-flex flex-column justify-content-between align-items-center  p-4">
+				<div class="card-body d-flex flex-column align-items-center  p-4">
 					<img src="assets/images/lupa.svg" alt="zoom" height="95" width="80">
 					<h4 class="py-4">Analiz</h4>
 					<p class="card-text">Zamonaviy texnologiyalar yordamida yuqori sifatda va aniqlik kafolatlangan
@@ -57,7 +57,7 @@
 				</div>
 			</div>
 			<div class="card rounded-4" style="width: 280px;height: 320px;">
-				<div class="card-body d-flex flex-column justify-content-between align-items-center  p-4">
+				<div class="card-body d-flex flex-column align-items-center  p-4">
 					<img src="assets/images/detail.svg" alt="zoom" height="95" width="80">
 
 					<h4 class="py-4">Diagnoz </h4>
@@ -65,7 +65,7 @@
 				</div>
 			</div>
 			<div class="card rounded-4" style="width: 280px;height: 320px;">
-				<div class="card-body d-flex flex-column justify-content-between align-items-center  p-4">
+				<div class="card-body d-flex flex-column align-items-center  p-4">
 					<img src="assets/images/frame.svg" alt="zoom" height="95" width="80">
 					<h4 class="py-4">Davolash</h4>
 					<p class="card-text">Bemorga mos ravishda (statsionar yoki ambulator) davolash muolajalari</p>
@@ -84,10 +84,11 @@
 
 		</div>
 		<template id="template">
-			<a class="swiper-slide m-2 text-reset text-decoration-none" href="">
+			<a class="swiper-slide m-1 text-reset text-decoration-none d-flex flex-column justify-content-center" href="">
 				<img class="img" src="" alt="img" width="150" height="">
 				<div class="name"></div>
 				<div class="title"></div>
+				<button type="button" class="btn btn-primary">Contact</button>
 			</a>
 
 		</template>
@@ -123,7 +124,7 @@
 					"name": "Barno Yo`ldashevna",
 					"title": "Oliy toifali pediatr",
 					"img": "/assets/images/avatar/team-4.jpg",
-					"link": "/team/team-4.html"
+					"link": "#"
 				}, {
 					"name": "Malika Axmadjonovna",
 					"title": "UTT shifokori",
@@ -159,8 +160,7 @@
 			}
 			render()
 		</script>
-		<a type="button" href="/team.html"
-			class="btn btn-primary d-flex justify-content-center  rounded-5 btn-lg px-4  "
+		<a type="button" href="/team" class="btn btn-primary d-flex justify-content-center  rounded-5 btn-lg px-4  "
 			style="width: 300px !important;margin: 20px auto;">Ko`proq
 			ma`lumot</a>
 	</section>
@@ -189,8 +189,7 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
-		<a type="button" href="/gallery.html"
-			class="btn btn-primary d-flex justify-content-center  rounded-5 btn-lg px-4  "
+		<a type="button" href="/gallery" class="btn btn-primary d-flex justify-content-center  rounded-5 btn-lg px-4  "
 			style="width: 300px !important;margin: 20px auto;">Yana</a>
 	</section>
 
